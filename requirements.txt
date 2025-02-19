@@ -3,3 +3,5 @@ yt-dlp
 flask
 PyNaCl
 ffmpeg-python
+yt-dlp --upgrade
+
