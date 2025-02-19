@@ -3,5 +3,6 @@ yt-dlp
 flask
 PyNaCl
 ffmpeg-python
-yt-dlp --upgrade
+yt-dlp>=2025.1.26
+
 
