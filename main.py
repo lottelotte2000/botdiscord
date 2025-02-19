@@ -64,7 +64,11 @@ class MusicPlayer:
                         info = info['entries'][0]
 
                     format_selector = ydl.build_format_selector('bestaudio/best')
-                    formats = list(format_selector({**info}))  # แปลง generator เป็น list
+                    if 'formats' not in info:
+                        print("Error: No formats found for this video.")
+                        return  # ออกจากฟังก์ชันเพื่อไม่ให้บอทหยุดทำงาน
+
+                    formats = list(format_selector({**info}))
                     if not formats:
                         await ctx.send("❌ ไม่พบรูปแบบเสียงที่เหมาะสม")
                         continue
